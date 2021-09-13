@@ -1,0 +1,19 @@
+.container{
+    background:url('../../../assets/images/back.jpg');
+    height: 25rem;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content{
+    font-size: 1.2rem;
+   h2{
+       color: rgb(44, 0, 240);
+       font-size: 4rem;
+   }
+   p{
+    text-align: center;
+   }
+   
+}

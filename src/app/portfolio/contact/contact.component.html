@@ -1,0 +1,101 @@
+<h2 style="text-align: center;">Contact Us</h2><hr>
+<div class="container">
+<div class="row">
+    <div class="col-8">
+        <button class="btn btn-outline-success"><i class="fa fa-email"></i>ajayyadav24567@gmail.com</button>
+    </div>
+    <div class="col">
+        <button class="btn btn-outline-success"><i class="fa fa-phone"></i>+91 6204013196</button>
+    </div>
+</div>
+</div><br>
+<form [formGroup]='myForm'>
+    <div class="container">
+        <div class="form-group">
+            <label for="firstName">FirstName</label>
+            <input type="text" class="form-control" id="firstName" formControlName='fname'
+                placeholder="Enter your first name">
+            <ng-template>
+                <i class="fa fa-info-circle"></i>
+            </ng-template>
+            <ng-container *ngIf="firstname.untouched; then info; else checkicon"></ng-container>
+            <ng-template #info>
+                <i class="fa fa-info-circle info-icon"></i>
+            </ng-template>
+            <ng-template #checkicon>
+                <i class="fa fa-check-circle ok" [ngClass]="{
+                'fa-check-circle':firstname.valid,
+                'ok':firstname.valid,
+                'fa-times-circle error':!firstname.valid,
+                'error':!firstname.valid
+            }"></i>
+                <div class="message-box" *ngIf="firstname.errors">
+                    <div *ngIf='firstname.errors.required'>First name is required</div>
+                    <div *ngIf="firstname.errors.minlength">min length should be is 3</div>
+                    <div *ngIf="firstname.errors.maxlength">maximum length should be 10</div>
+                    <div *ngIf="firstname.errors.pattern">Pattern not match</div>
+                </div>
+            </ng-template>
+        </div>
+
+
+        <div class="form-group">
+            <label for="lastname">LastName:</label>
+            <input type="text" class="form-control" id="lastname" placeholder="Enter your last name"
+                formControlName='lname'>
+
+           <ng-template #info>
+            <i class="fa fa-info-circle info-icon"></i>
+           </ng-template>
+           <ng-container *ngIf='lastname.untouched; then info; else msg'></ng-container>
+           <ng-template #msg>
+            <i class="fa fa-check-circle ok" [ngClass]="{
+                'fa-check-circle':lastname.valid,
+                'ok':lastname.valid,
+                'fa-times-circle error':!lastname.valid,
+                'error':!lastname.valid  
+            }"></i>
+            <div class="message-box" *ngIf="lastname.errors">
+                <div *ngIf='lastname.errors.required'>Last name is required</div>
+                <div *ngIf="lastname.errors.minlength">min length should be is 3</div>
+                <div *ngIf="lastname.errors.maxlength">maximum length should be 10</div>
+                <div *ngIf="lastname.errors.pattern">Pattern not match</div>
+            </div>
+           </ng-template>
+        </div>
+        <div class="form-group">
+            <label for="emailid">Email:</label>
+            <input type="text" class="form-control" placeholder="Enter your Email" formControlName='email'>
+            <ng-template #info>
+                <i class="fa fa-info-circle"></i>
+            </ng-template>
+            <ng-container *ngIf='emaiId.untouched; then info; else email'></ng-container>
+            <ng-template #email>
+                <i class="fa fa-check-circle ok" [ngClass]="{
+                    'fa-check-circle':emaiId.valid,
+                    'ok':emaiId.valid,
+                    'fa-times-circle error':!emaiId.valid,
+                    'error':!emaiId.valid
+    }"></i>
+    <div class="message-box" *ngIf='emaiId.errors'>
+        <div *ngIf='emaiId.errors.required'>Email is required</div>
+        <div *ngIf='emaiId.errors.pattern'>pattern not match</div>
+    </div>
+            </ng-template>
+        </div>
+        <label for="msg">Message</label>
+        <div class="form-group">
+            <textarea name="" id="msg" cols="30" rows="3" class="form-control" placeholder="message here....."></textarea>
+        </div>
+        <div class="row mt-2">
+            <div class="col">
+                <button class="btn btn-secondary form-control" type="submit" [disabled]='myForm.untouched' (click)='reset()'>Reset</button>
+            </div>
+            <div class="col">
+                <button class="btn btn-primary form-control" type="submit" (ngSubmit)='myForm.value' [disabled]='myForm.invalid'>Submit</button>
+            </div>
+        </div>
+        
+    </div>
+    
+</form>

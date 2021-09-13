@@ -1,0 +1,36 @@
+.form-control.ng-invalid.ng-touched{
+    border: 1px solid red;
+}
+.form-group{
+    position: relative;
+    .fa{
+        position: absolute;
+        top: 34px;
+        right: 9px;
+        font-size: 20px;
+    }
+}
+.message-box{
+    color: red;
+    position: absolute;
+    right: -189px;
+    top: 20px;
+}
+.info-icon{
+    color: grey;
+}
+.ok{
+color: green;
+}
+.error{
+    color: red;
+}
+label{
+    font-weight: bold;
+}
+.container{
+    width: 600px;
+}
+input{
+    padding: 10px;
+}

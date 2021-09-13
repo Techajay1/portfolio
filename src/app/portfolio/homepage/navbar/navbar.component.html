@@ -1,0 +1,29 @@
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand">PORTFOLIO</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse nav-menu" id="navbarSupportedContent">
+        
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item" [routerLinkActive]="'active highlight'" [routerLinkActiveOptions]="{exact:true}">
+            <a class="nav-link active" [routerLink]="['/']">Home</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="'active highlight'">
+            <a class="nav-link" [routerLink]="['/about']">About Us</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="'active highlight'">
+        <a class="nav-link" [routerLink]="['/blog']">Blog</a>
+          </li>
+          <li class="nav-item" [routerLinkActive]="'active highlight'">
+            <a class="nav-link" [routerLink]="['/contact']">Contact</a>
+              </li>
+        </ul>
+      
+        <form class="d-flex">
+         <button class="btn btn-outline-primary form-control" [routerLink]="['contact']">Contact Us</button>
+        </form>
+      </div>
+    </div>
+  </nav>
